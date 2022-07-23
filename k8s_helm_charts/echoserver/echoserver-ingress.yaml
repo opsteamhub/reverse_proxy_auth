@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 150m
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.org/client-max-body-size: 150m
+  name: echoserver-ingress
+  #namespace: echoserver
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: echoserver.novinho.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: echoserver-echo-server
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
