@@ -1,0 +1,5 @@
+# Local .terraform directories
+**/.terraform/*
+
+## Local .terraform.lock.hcl file
+**/.terraform.lock.hcl
