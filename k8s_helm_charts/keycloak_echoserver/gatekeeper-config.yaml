@@ -6,13 +6,13 @@ metadata:
 data:
   keycloak-gatekeeper.conf: |+
     # is the url for retrieve the OpenID configuration - normally the <server>/auth/realms/<realm_name>
-    discovery-url: https://keycloak.192.168.164.1.nip.io:8443/auth/realms/local
+    discovery-url: https://keycloak-http.keycloak.svc.cluster.local:8443/auth/realms/local
     # skip tls verify
     skip-openid-provider-tls-verify: true
     # the client id for the 'client' application
     client-id: gatekeeper
     # the secret associated to the 'client' application
-    client-secret: 3d87097b-9f31-4457-89b3-a6578d21f759
+    client-secret: GnovbKiHYMPOFATWpbkjTuPhPTVofX3d
     # the interface definition you wish the proxy to listen, all interfaces is specified as ':<port>', unix sockets as unix://<REL_PATH>|</ABS PATH>
     listen: :3000
     # whether to enable refresh tokens
@@ -22,7 +22,7 @@ data:
     # the location of a private key for TLS
     tls-private-key:
     # the redirection url, essentially the site url, note: /oauth/callback is added at the end
-    redirection-url: http://nginx.192.168.164.130.nip.io
+    redirection-url: http://echoserver-echo-server.default.svc.cluster.local
     secure-cookie: false
     # the encryption key used to encode the session state
     encryption-key: vGcLt8ZUdPX5fXhtLZaPHZkGWHZrT6aa
