@@ -11,9 +11,9 @@ cluster_name         = "eks-novinho"
 nodes_instances_size = "t3.micro"
 
 auto_scale_options = {
-  min     = 4
-  max     = 5
-  desired = 2
+  min     = 0
+  max     = 0
+  desired = 0
 }
 
 auto_scale_cpu = {
