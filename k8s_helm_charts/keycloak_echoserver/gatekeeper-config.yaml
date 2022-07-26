@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gatekeeper-config
+  namespace: default
+data:
+  keycloak-gatekeeper.conf: |+
+    # is the url for retrieve the OpenID configuration - normally the <server>/auth/realms/<realm_name>
+    discovery-url: https://keycloak.192.168.164.1.nip.io:8443/auth/realms/local
+    # skip tls verify
+    skip-openid-provider-tls-verify: true
+    # the client id for the 'client' application
+    client-id: gatekeeper
+    # the secret associated to the 'client' application
+    client-secret: 3d87097b-9f31-4457-89b3-a6578d21f759
+    # the interface definition you wish the proxy to listen, all interfaces is specified as ':<port>', unix sockets as unix://<REL_PATH>|</ABS PATH>
+    listen: :3000
+    # whether to enable refresh tokens
+    enable-refresh-tokens: true
+    # the location of a certificate you wish the proxy to use for TLS support
+    tls-cert:
+    # the location of a private key for TLS
+    tls-private-key:
+    # the redirection url, essentially the site url, note: /oauth/callback is added at the end
+    redirection-url: http://nginx.192.168.164.130.nip.io
+    secure-cookie: false
+    # the encryption key used to encode the session state
+    encryption-key: vGcLt8ZUdPX5fXhtLZaPHZkGWHZrT6aa
+    # the upstream endpoint which we should proxy request
+    upstream-url: http://127.0.0.1:80/
+    forbidden-page: /html/access-forbidden.html
+    resources:
+    - uri: /*
+      groups:
+      - my-app
