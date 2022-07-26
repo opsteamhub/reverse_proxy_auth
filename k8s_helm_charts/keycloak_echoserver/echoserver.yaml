@@ -72,10 +72,6 @@ spec:
           successThreshold: 1
           timeoutSeconds: 2
         name: echo-server
-        ports:
-        - containerPort: 80
-          name: http
-          protocol: TCP
         resources:
           limits:
             cpu: 50m
