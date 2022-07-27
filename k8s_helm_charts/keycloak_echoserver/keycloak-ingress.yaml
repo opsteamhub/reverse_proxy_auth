@@ -3,17 +3,17 @@ kind: Ingress
 metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-  name: echoserver-ingress
-  #namespace: echoserver
+  name: keycloak-ingress
+  namespace: keycloak
 spec:
   ingressClassName: nginx
   rules:
-  - host: echoserver.novinho.com
+  - host: keycloak.novinho.com
     http:
       paths:
       - backend:
           service:
-            name: echoserver-echo-server
+            name: keycloak-http
             port:
               number: 80
         path: /
