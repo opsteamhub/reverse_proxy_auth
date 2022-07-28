@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: keycloak.novinho.com
+  - host: keycloak.opsteamlab.net
     http:
       paths:
       - backend:
