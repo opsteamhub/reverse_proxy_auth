@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: echoserver.novinho.com
+  - host: echoserver.opsteamlab.net
     http:
       paths:
       - backend:
