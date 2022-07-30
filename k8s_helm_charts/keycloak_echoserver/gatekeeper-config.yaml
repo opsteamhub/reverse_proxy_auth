@@ -5,8 +5,9 @@ metadata:
   namespace: default
 data:
   keycloak-gatekeeper.conf: |+
-    # is the url for retrieve the OpenID configuration - normally the <server>/auth/realms/<realm_name>
-    discovery-url: https://keycloak-http.keycloak.svc.cluster.local:8443/auth/realms/local
+    # this is the url for retrieve the OpenID configuration - normally the <server>/auth/realms/<realm_name>
+    discovery-url: http://keycloak.opsteamlab.net/auth/realms/local
+    #discovery-url: https://keycloak-http.keycloak.svc.cluster.local:8443/auth/realms/local
     # skip tls verify
     skip-openid-provider-tls-verify: true
     # the client id for the 'client' application
@@ -22,7 +23,8 @@ data:
     # the location of a private key for TLS
     tls-private-key:
     # the redirection url, essentially the site url, note: /oauth/callback is added at the end
-    redirection-url: http://echoserver-echo-server.default.svc.cluster.local
+    redirection-url: http://echoserver.opsteamlab.net/
+    #redirection-url: http://echoserver-echo-server.default.svc.cluster.local
     secure-cookie: false
     # the encryption key used to encode the session state
     encryption-key: vGcLt8ZUdPX5fXhtLZaPHZkGWHZrT6aa
