@@ -6,7 +6,7 @@ helm repo add codecentric https://codecentric.github.io/helm-charts
 helm repo update
 
 # Setting usefull variables
-NAMESPACE=keycloak
+NAMESPACE=keycloakValues
 
 # Create Keycloak Namespace
 kubectl create ns ${NAMESPACE} || true
@@ -14,6 +14,7 @@ kubectl create ns ${NAMESPACE} || true
 
 helm upgrade --install keycloak \
              --namespace ${NAMESPACE} \
+             -f values.yaml \
              codecentric/keycloak
 
 ## Create a port-forwarding with the following commands:
