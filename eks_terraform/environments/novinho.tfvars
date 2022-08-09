@@ -8,7 +8,7 @@ availability_zones = ["us-east-1a", "us-east-1b"]
 
 k8s_version          = "1.21"
 cluster_name         = "eks-novinho"
-nodes_instances_size = "t3.micro"
+nodes_instances_size = "t2.small"
 
 auto_scale_options = {
   min     = 4

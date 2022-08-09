@@ -6,7 +6,7 @@ helm repo add codecentric https://codecentric.github.io/helm-charts
 helm repo update
 
 # Setting usefull variables
-NAMESPACE=keycloakValues
+NAMESPACE=keycloakvalues
 
 # Create Keycloak Namespace
 kubectl create ns ${NAMESPACE} || true

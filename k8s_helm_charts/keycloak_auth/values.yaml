@@ -5,7 +5,7 @@ fullnameOverride: ""
 nameOverride: ""
 
 # The number of replicas to create (has no effect if autoscaling enabled)
-replicas: 2
+replicas: 1
 
 image:
   # The Keycloak image repository
@@ -188,11 +188,11 @@ startupProbe: |
 # Pod resource requests and limits
 resources:
  requests:
+   cpu: "100m"
+   memory: "128Mi"
+ limits:
    cpu: "300m"
    memory: "512Mi"
- limits:
-   cpu: "500m"
-   memory: "1024Mi"
 
 # Startup scripts to run before Keycloak starts up
 startupScripts:
