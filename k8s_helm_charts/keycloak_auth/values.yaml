@@ -188,11 +188,11 @@ startupProbe: |
 # Pod resource requests and limits
 resources:
  requests:
-   cpu: "100m"
-   memory: "128Mi"
+   cpu: "500m"
+   memory: "1024Mi"
  limits:
-   cpu: "300m"
-   memory: "512Mi"
+   cpu: "500m"
+   memory: "1024Mi"
 
 # Startup scripts to run before Keycloak starts up
 startupScripts:
@@ -466,7 +466,7 @@ autoscaling:
   # If `true`, a autoscaling/v2beta2 HorizontalPodAutoscaler resource is created (requires Kubernetes 1.18 or above)
   # Autoscaling seems to be most reliable when using KUBE_PING service discovery (see README for details)
   # This disables the `replicas` field in the StatefulSet
-  enabled: false
+  enabled: true
   # Additional HorizontalPodAutoscaler labels
   labels: {}
   # The minimum and maximum number of replicas for the Keycloak StatefulSet
