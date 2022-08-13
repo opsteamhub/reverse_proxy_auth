@@ -10,19 +10,17 @@ k8s_version          = "1.21"
 cluster_name         = "eks-novinho"
 nodes_instances_size = "t2.small"
 
+# auto_scale_options = {
+#   min     = 0
+#   max     = 1
+#   desired = 0
+# }
+
 auto_scale_options = {
-  min     = 0
-  max     = 1
-  desired = 0
+ min     = 4
+ max     = 5
+ desired = 4
 }
-
-#auto_scale_options = {
-#  min     = 4
-#  max     = 5
-#  desired = 4
-#}
-
-
 
 auto_scale_cpu = {
   scale_up_threshold  = 80
