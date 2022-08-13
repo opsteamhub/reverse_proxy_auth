@@ -28,3 +28,7 @@ export TF_VAR_db_password="KeycloAk123"
 - name: DB_PASSWORD
     value: "KeycloAk123"
 ```
+
+## Troubleshooting
+
+[Creating a new Database](https://github.com/pgmodeler/pgmodeler/issues/1177)

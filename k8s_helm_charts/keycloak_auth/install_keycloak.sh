@@ -14,6 +14,7 @@ kubectl create ns ${NAMESPACE} || true
 
 helm upgrade --install keycloak \
              --namespace ${NAMESPACE} \
+             -f values.yaml \
              codecentric/keycloak
 
 ## Create a port-forwarding with the following commands:
