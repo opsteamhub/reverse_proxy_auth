@@ -4,7 +4,7 @@ metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
     meta.helm.sh/release-name: echoserver
-    meta.helm.sh/release-namespace: default
+    meta.helm.sh/release-namespace: echoserver
   labels:
     app.kubernetes.io/instance: echoserver
     app.kubernetes.io/managed-by: Helm
@@ -12,7 +12,7 @@ metadata:
     app.kubernetes.io/version: 0.6.0
     helm.sh/chart: echo-server-0.5.0
   name: echoserver-echo-server
-  namespace: default
+  namespace: echoserver
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -65,7 +65,7 @@ spec:
             - name: x-echo-code
               value: "200"
             path: /ping
-            port: http
+            port: 80
             scheme: HTTP
           initialDelaySeconds: 5
           periodSeconds: 10

@@ -2,18 +2,18 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: gatekeeper-config
-  namespace: default
+  namespace: echoserver
 data:
   keycloak-gatekeeper.conf: |+
     # this is the url for retrieve the OpenID configuration - normally the <server>/auth/realms/<realm_name>
-    discovery-url: http://keycloak.opsteamlab.net/auth/realms/local
+    discovery-url: https://keycloak.opsteamlab.net/auth/realms/local
     #discovery-url: https://keycloak-http.keycloak.svc.cluster.local:8443/auth/realms/local
     # skip tls verify
     skip-openid-provider-tls-verify: true
     # the client id for the 'client' application
     client-id: gatekeeper
     # the secret associated to the 'client' application
-    client-secret: GnovbKiHYMPOFATWpbkjTuPhPTVofX3d
+    client-secret: OtJOikDcURaHuvosKTp03F9AhxpMljeU
     # the interface definition you wish the proxy to listen, all interfaces is specified as ':<port>', unix sockets as unix://<REL_PATH>|</ABS PATH>
     listen: :3000
     # whether to enable refresh tokens
@@ -23,7 +23,7 @@ data:
     # the location of a private key for TLS
     tls-private-key:
     # the redirection url, essentially the site url, note: /oauth/callback is added at the end
-    redirection-url: http://echoserver.opsteamlab.net/
+    redirection-url: https://echoserver.opsteamlab.net/
     #redirection-url: http://echoserver-echo-server.default.svc.cluster.local
     secure-cookie: false
     # the encryption key used to encode the session state
